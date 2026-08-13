@@ -2,25 +2,74 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a2032;
+
+  --color-navy-50: #eef4f9;
+  --color-navy-100: #d9e6f0;
+  --color-navy-200: #b3cce0;
+  --color-navy-300: #7fa9c9;
+  --color-navy-400: #4c82ac;
+  --color-navy-500: #2c638e;
+  --color-navy-600: #1d5573;
+  --color-navy-700: #164260;
+  --color-navy-800: #0f3049;
+  --color-navy-900: #0a2032;
+  --color-navy-950: #06131f;
+
+  --color-gold-50: #fdf6ea;
+  --color-gold-100: #fbebc9;
+  --color-gold-200: #f6d693;
+  --color-gold-300: #f0bd5e;
+  --color-gold-400: #eba838;
+  --color-gold-500: #dd9024;
+  --color-gold-600: #bd731a;
+  --color-gold-700: #965718;
+  --color-gold-800: #78451a;
+  --color-gold-900: #613a19;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-navy-50: var(--color-navy-50);
+  --color-navy-100: var(--color-navy-100);
+  --color-navy-200: var(--color-navy-200);
+  --color-navy-300: var(--color-navy-300);
+  --color-navy-400: var(--color-navy-400);
+  --color-navy-500: var(--color-navy-500);
+  --color-navy-600: var(--color-navy-600);
+  --color-navy-700: var(--color-navy-700);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-950: var(--color-navy-950);
+
+  --color-gold-50: var(--color-gold-50);
+  --color-gold-100: var(--color-gold-100);
+  --color-gold-200: var(--color-gold-200);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-700: var(--color-gold-700);
+  --color-gold-800: var(--color-gold-800);
+  --color-gold-900: var(--color-gold-900);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
