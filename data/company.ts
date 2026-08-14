@@ -1,3 +1,14 @@
+import {
+  Lightbulb,
+  Handshake,
+  HardHat,
+  Wrench,
+  Trophy,
+  Infinity as InfinityIcon,
+  Users,
+  HeartHandshake,
+  MessageCircle,
+} from "lucide-react";
 import type { Stat } from "@/types";
 
 export const stats: Stat[] = [
@@ -7,16 +18,16 @@ export const stats: Stat[] = [
   { label: "Service disciplines", value: "14" },
 ];
 
-export const coreValues: string[] = [
-  "Customer Satisfaction Through Speed, Quality & Efficiency",
-  "Long Business Relations",
-  "Professional Behaviour",
-  "Flexible in Discussions",
-  "Passion for Winning",
-  "Boundary-Less Thinking",
-  "Team Work",
-  "Recognition, Growth, Respect & Dignity of Individuals",
-  "Respect of Each Other",
+export const coreValues = [
+  { title: "Customer Satisfaction Through Speed, Quality & Efficiency", icon: Lightbulb },
+  { title: "Long Business Relations", icon: Handshake },
+  { title: "Professional Behaviour", icon: HardHat },
+  { title: "Flexible in Discussions", icon: Wrench },
+  { title: "Passion for Winning", icon: Trophy },
+  { title: "Boundary-Less Thinking", icon: InfinityIcon },
+  { title: "Team Work", icon: Users },
+  { title: "Recognition, Growth, Respect & Dignity of Individuals", icon: HeartHandshake },
+  { title: "Respect of Each Other", icon: MessageCircle },
 ];
 
 export const mission =

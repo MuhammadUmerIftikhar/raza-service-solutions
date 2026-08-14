@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SplashScreen } from "@/components/layout/SplashScreen";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, localBusinessSchema } from "@/lib/schema";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
@@ -34,9 +35,6 @@ export const metadata: Metadata = {
     "air compressor supplier Riyadh",
   ],
   authors: [{ name: SITE_NAME }],
-  icons: {
-    icon: "/favicon.ico",
-  },
   openGraph: {
     type: "website",
     locale: "en_SA",
@@ -65,6 +63,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white text-navy-900">
+        <SplashScreen />
         <JsonLd data={[organizationSchema(), localBusinessSchema()]} />
         <Navbar />
         <main className="flex-1">{children}</main>

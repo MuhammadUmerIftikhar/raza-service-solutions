@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { CoreValueCard } from "@/components/sections/CoreValueCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
@@ -57,16 +58,11 @@ export default function CareersPage() {
               people: the same commitment that has driven our growth as we
               expand into the Kingdom of Saudi Arabia.
             </p>
-            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
               {coreValues.map((value) => (
-                <li
-                  key={value}
-                  className="rounded-xl border border-navy-100 bg-white px-4 py-3 text-sm font-medium text-navy-800"
-                >
-                  {value}
-                </li>
+                <CoreValueCard key={value.title} title={value.title} icon={value.icon} />
               ))}
-            </ul>
+            </div>
 
             <SectionHeading eyebrow="Open Positions" title="Current openings" className="mt-16" />
             <div className="mt-6 rounded-2xl border border-dashed border-navy-200 bg-navy-50 p-8 text-center">

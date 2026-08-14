@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/sections/CTASection";
 import { OrgChart } from "@/components/sections/OrgChart";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { FadeIn } from "@/components/motion/FadeIn";
+import { CoreValueCard } from "@/components/sections/CoreValueCard";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -133,18 +133,13 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24">
         <Container>
           <SectionHeading eyebrow="Our Culture" title="Core Values" align="center" />
-          <FadeIn className="mx-auto mt-12 max-w-4xl">
-            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {coreValues.map((value) => (
-                <li
-                  key={value}
-                  className="rounded-xl border border-navy-100 bg-white px-4 py-4 text-center text-sm font-medium text-navy-800"
-                >
-                  {value}
-                </li>
-              ))}
-            </ul>
-          </FadeIn>
+          <StaggerGroup className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+            {coreValues.map((value) => (
+              <StaggerItem key={value.title}>
+                <CoreValueCard title={value.title} icon={value.icon} />
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
         </Container>
       </section>
 

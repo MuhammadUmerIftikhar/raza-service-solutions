@@ -39,33 +39,47 @@ export default function GalleryPage() {
 
       <section className="py-20 sm:py-24">
         <Container className="space-y-16">
-          {projects.map((project) => (
-            <div key={project.slug}>
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h2 className="text-lg font-semibold text-navy-950">{project.title}</h2>
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="text-sm font-semibold text-gold-600 hover:text-gold-700"
-                >
-                  View project →
-                </Link>
+          {projects.map((project) => {
+            // The hero photo is often reused as one of the gallery shots
+            // (useful on the project detail page), so dedupe by image path
+            // here to avoid showing the same photo twice in one grid.
+            const seen = new Set<string>();
+            const tiles: { key: string; label: string; image?: string }[] = [];
+
+            if (project.heroImage) seen.add(project.heroImage);
+            tiles.push({ key: "hero", label: project.imageLabel, image: project.heroImage });
+
+            project.gallery.forEach((item, index) => {
+              if (item.image) {
+                if (seen.has(item.image)) return;
+                seen.add(item.image);
+              }
+              tiles.push({ key: `${project.slug}-${index}`, label: item.label, image: item.image });
+            });
+
+            return (
+              <div key={project.slug}>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h2 className="text-lg font-semibold text-navy-950">{project.title}</h2>
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="text-sm font-semibold text-gold-600 hover:text-gold-700"
+                  >
+                    View project →
+                  </Link>
+                </div>
+                <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                  {tiles.map((tile) =>
+                    tile.image ? (
+                      <PreviewableImage key={tile.key} src={tile.image} label={tile.label} aspect="aspect-square" />
+                    ) : (
+                      <ImagePlaceholder key={tile.key} label={tile.label} variant="navy" aspect="aspect-square" />
+                    )
+                  )}
+                </div>
               </div>
-              <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-                {project.heroImage ? (
-                  <PreviewableImage src={project.heroImage} label={project.imageLabel} aspect="aspect-square" />
-                ) : (
-                  <ImagePlaceholder label={project.imageLabel} variant="gold" aspect="aspect-square" />
-                )}
-                {project.gallery.map((image) =>
-                  image.image ? (
-                    <PreviewableImage key={image.label} src={image.image} label={image.label} aspect="aspect-square" />
-                  ) : (
-                    <ImagePlaceholder key={image.label} label={image.label} variant="navy" aspect="aspect-square" />
-                  )
-                )}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </Container>
       </section>
 

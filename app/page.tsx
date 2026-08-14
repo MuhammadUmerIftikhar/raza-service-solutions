@@ -8,6 +8,7 @@ import { ServiceCard } from "@/components/sections/ServiceCard";
 import { ProjectCard } from "@/components/sections/ProjectCard";
 import { IndustryCard } from "@/components/sections/IndustryCard";
 import { ClientLogoWall } from "@/components/sections/ClientLogoWall";
+import { CoreValueCard } from "@/components/sections/CoreValueCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
@@ -186,18 +187,13 @@ export default function Home() {
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
             </FadeIn>
-            <FadeIn delay={0.1}>
-              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {coreValues.map((value) => (
-                  <li
-                    key={value}
-                    className="rounded-xl border border-navy-100 bg-white px-4 py-3 text-sm font-medium text-navy-800"
-                  >
-                    {value}
-                  </li>
-                ))}
-              </ul>
-            </FadeIn>
+            <StaggerGroup className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
+              {coreValues.slice(0, 6).map((value) => (
+                <StaggerItem key={value.title}>
+                  <CoreValueCard title={value.title} icon={value.icon} />
+                </StaggerItem>
+              ))}
+            </StaggerGroup>
           </div>
         </Container>
       </section>

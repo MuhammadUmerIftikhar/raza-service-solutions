@@ -1,11 +1,15 @@
+import Image from "next/image";
 import { ArrowRight, ShieldCheck, Wrench } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { stats } from "@/data/company";
+import { findVisionLogo } from "@/lib/media";
 
 export function HomeHero() {
+  const visionLogo = findVisionLogo();
+
   return (
     <section className="relative overflow-hidden bg-navy-950">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-30" aria-hidden />
@@ -61,32 +65,44 @@ export function HomeHero() {
         <FadeIn delay={0.15} className="relative">
           <div className="grid grid-cols-2 gap-4">
             <ImagePlaceholder
-              label="PEB operations building, King Fahad International Airport"
-              src="/images/project-gaca-airport-1.png"
+              label="Rooftop HVAC installation"
+              src="/images/hero-hvac-rooftop-units.png"
               variant="gold"
-              aspect="aspect-[3/4]"
+              aspect="aspect-square"
               priority
             />
             <ImagePlaceholder
-              label="Rooftop package HVAC units at King Fahad International Airport"
-              src="/images/project-gaca-airport-2.png"
+              label="Cold storage warehouse racking"
+              src="/images/gallery-warehouse-racking.png"
               variant="navy"
-              aspect="aspect-[3/4]"
+              aspect="aspect-square"
               priority
             />
             <ImagePlaceholder
-              label="Cold storage warehouse racking installation"
-              src="/images/project-warda-cold-room-racking.png"
+              label="Pre-engineered building structure under construction"
+              src="/images/hero-peb-construction.png"
               variant="navy"
-              aspect="aspect-[3/4]"
+              aspect="aspect-square"
             />
             <ImagePlaceholder
-              label="Satellite communications site with cooling plant, STC data centers"
-              src="/images/project-stc-satellite-site.png"
+              label="Industrial process plant"
+              src="/images/hero-industrial-plant-night.png"
               variant="gold"
-              aspect="aspect-[3/4]"
+              aspect="aspect-square"
             />
           </div>
+
+          {visionLogo && (
+            <div className="mt-6 flex justify-end">
+              <Image
+                src={visionLogo}
+                alt="Saudi Vision 2030"
+                width={260}
+                height={180}
+                className="h-20 w-auto opacity-95 sm:h-24"
+              />
+            </div>
+          )}
         </FadeIn>
       </Container>
     </section>

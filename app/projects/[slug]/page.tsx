@@ -55,6 +55,12 @@ export default async function ProjectDetailPage({
     .map((s) => getServiceBySlug(s))
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
+  // The hero banner above already shows project.heroImage, so drop any
+  // gallery entry pointing at that same photo to avoid showing it twice.
+  const secondaryGallery = project.gallery.filter(
+    (image) => !project.heroImage || image.image !== project.heroImage
+  );
+
   return (
     <>
       <JsonLd
@@ -108,11 +114,11 @@ export default async function ProjectDetailPage({
               </ul>
             </div>
 
-            {project.gallery.length > 0 && (
+            {secondaryGallery.length > 0 && (
               <div>
                 <SectionHeading eyebrow="Site Photos" title="Project Gallery" />
                 <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {project.gallery.map((image) => (
+                  {secondaryGallery.map((image) => (
                     <ImagePlaceholder
                       key={image.label}
                       label={image.label}

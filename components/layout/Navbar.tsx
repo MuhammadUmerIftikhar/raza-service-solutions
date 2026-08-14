@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
@@ -14,19 +15,23 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="sticky top-0 z-50 border-b border-navy-100 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-3 lg:px-8">
-        <Link href="/" className="flex items-center gap-2.5">
+      <div className="flex w-full items-center justify-between gap-4 px-6 py-3 lg:px-10 xl:px-16">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <span className="relative h-10 w-10 shrink-0">
             <Image src="/images/logo.png" alt="RSS Contracting logo" fill className="object-contain" priority />
           </span>
           <span className="flex flex-col leading-tight">
-            <span className="text-sm font-bold text-navy-950 sm:text-base">
+            <span className="whitespace-nowrap text-sm font-bold text-navy-950 sm:text-base">
               Raza Service Solutions
             </span>
-            <span className="text-[11px] font-medium uppercase tracking-wide text-navy-500">
+            <span className="whitespace-nowrap text-[11px] font-medium uppercase tracking-wide text-navy-500">
               RSS Contracting Co.
             </span>
           </span>
@@ -44,7 +49,12 @@ export function Navbar() {
                 <Link
                   href={item.href}
                   onClick={() => setServicesOpen(false)}
-                  className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-navy-800 hover:bg-navy-50 hover:text-navy-950"
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                    isActive(item.href)
+                      ? "bg-gold-50 text-gold-700"
+                      : "text-navy-800 hover:bg-navy-50 hover:text-navy-950"
+                  }`}
                 >
                   Services
                   <ChevronDown className="h-3.5 w-3.5" aria-hidden />
@@ -64,7 +74,10 @@ export function Navbar() {
                             key={service.slug}
                             href={`/services/${service.slug}`}
                             onClick={() => setServicesOpen(false)}
-                            className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-left hover:bg-navy-50"
+                            aria-current={isActive(`/services/${service.slug}`) ? "page" : undefined}
+                            className={`flex items-start gap-3 rounded-xl px-3 py-2.5 text-left ${
+                              isActive(`/services/${service.slug}`) ? "bg-gold-50" : "hover:bg-navy-50"
+                            }`}
                           >
                             <service.icon
                               className="mt-0.5 h-[18px] w-[18px] shrink-0 text-gold-600"
@@ -89,7 +102,12 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-3 py-2 text-sm font-medium text-navy-800 hover:bg-navy-50 hover:text-navy-950"
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                  isActive(item.href)
+                    ? "bg-gold-50 text-gold-700"
+                    : "text-navy-800 hover:bg-navy-50 hover:text-navy-950"
+                }`}
               >
                 {item.label}
               </Link>
@@ -135,7 +153,9 @@ export function Navbar() {
                     <button
                       type="button"
                       onClick={() => setMobileServicesOpen((v) => !v)}
-                      className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-navy-900"
+                      className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium ${
+                        isActive(item.href) ? "bg-gold-50 text-gold-700" : "text-navy-900"
+                      }`}
                     >
                       Services
                       <ChevronDown
@@ -157,7 +177,12 @@ export function Navbar() {
                               key={service.slug}
                               href={`/services/${service.slug}`}
                               onClick={() => setMobileOpen(false)}
-                              className="block rounded-lg px-3 py-2 text-sm text-navy-700 hover:bg-navy-50"
+                              aria-current={isActive(`/services/${service.slug}`) ? "page" : undefined}
+                              className={`block rounded-lg px-3 py-2 text-sm ${
+                                isActive(`/services/${service.slug}`)
+                                  ? "bg-gold-50 text-gold-700 font-medium"
+                                  : "text-navy-700 hover:bg-navy-50"
+                              }`}
                             >
                               {service.name}
                             </Link>
@@ -171,7 +196,12 @@ export function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-navy-900 hover:bg-navy-50"
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={`rounded-lg px-3 py-2.5 text-sm font-medium ${
+                      isActive(item.href)
+                        ? "bg-gold-50 text-gold-700"
+                        : "text-navy-900 hover:bg-navy-50"
+                    }`}
                   >
                     {item.label}
                   </Link>
