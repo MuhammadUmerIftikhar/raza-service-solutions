@@ -55,10 +55,10 @@ export default async function ProjectDetailPage({
     .map((s) => getServiceBySlug(s))
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
-  // The hero banner above already shows project.heroImage, so drop any
-  // gallery entry pointing at that same photo to avoid showing it twice.
+  // Only show real photos: drop placeholder-only entries (no image yet)
+  // and anything that duplicates the hero banner shown above.
   const secondaryGallery = project.gallery.filter(
-    (image) => !project.heroImage || image.image !== project.heroImage
+    (image) => image.image && image.image !== project.heroImage
   );
 
   return (

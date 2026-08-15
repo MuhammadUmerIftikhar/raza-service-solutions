@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { mainNav } from "@/data/nav";
@@ -16,6 +16,18 @@ export function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
+
+  // Lock background scroll while the mobile menu is open so scrolling
+  // (e.g. through the expanded Services list) stays within the menu
+  // instead of scrolling the page behind it.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [mobileOpen]);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -146,7 +158,7 @@ export function Navbar() {
             transition={{ duration: 0.2 }}
             className="overflow-hidden border-t border-navy-100 bg-white lg:hidden"
           >
-            <div className="flex flex-col gap-1 px-6 py-4">
+            <div className="flex max-h-[calc(100dvh-4.5rem)] flex-col gap-1 overflow-y-auto overscroll-contain px-6 py-4">
               {mainNav.map((item) =>
                 item.label === "Services" ? (
                   <div key={item.href}>

@@ -13,19 +13,24 @@ export const projects: Project[] = [
       "Structural steel erection for six operational units (APSCO, PASCO, BAKRI, SSAS, PAL, UGAFCO)",
       "Roof and wall cladding",
       "Airside-compliant site access and HSE management",
+      "Supply, installation, testing and commissioning of stainless steel and HDPE chilled water pipelines and galvanized iron drains (aboveground and underground)",
+      "Installation of fresh air unit",
+      "Supply and installation of AHUs",
+      "Supply and installation of ducted split units",
+      "Supply and installation of high wall split units",
     ],
     summary:
       "Erection of PEB operations and maintenance buildings across six units at King Fahad International Airport for client AJ Corporation.",
     description:
-      "RSS erected pre-engineered operations and maintenance buildings covering a 16,000 m² footprint at King Fahad International Airport on behalf of AJ Corporation, spanning six operational units: APSCO, PASCO, BAKRI, SSAS, PAL and UGAFCO. Work was carried out within an active airport environment, requiring strict adherence to airside access control and HSE procedures alongside standard PEB erection sequencing.",
-    relatedServiceSlugs: ["civil-construction", "engineering-design-detailing"],
+      "RSS erected pre-engineered operations and maintenance buildings covering a 16,000 m² footprint at King Fahad International Airport on behalf of AJ Corporation, spanning six operational units: APSCO, PASCO, BAKRI, SSAS, PAL and UGAFCO. Work was carried out within an active airport environment, requiring strict adherence to airside access control and HSE procedures alongside standard PEB erection sequencing. The scope also included aboveground and underground chilled water piping (stainless steel and HDPE) with galvanized iron drains, plus HVAC works covering fresh air units, AHUs, ducted split units and high wall split units.",
+    relatedServiceSlugs: ["civil-construction", "engineering-design-detailing", "chilled-water-piping", "hvac-systems"],
     imageLabel: "PEB operations building, King Fahad International Airport",
     heroImage: "/images/project-gaca-airport-1.png",
     gallery: [
-      { label: "Operations building exterior with elevated canopy walkway and airport tarmac beyond", image: "/images/project-gaca-airport-1.png" },
+      { label: "Stainless steel chilled water piping with flanged joints", image: "/images/service-chilled-water-piping-1.png" },
+      { label: "Underground chilled water pipeline installation", image: "/images/project-chilled-water-underground.png" },
       { label: "Rooftop package air-conditioning units with an aircraft on the tarmac below", image: "/images/project-gaca-airport-2.png" },
-      { label: "Structural steel erection with fire-protection piping ahead of cladding", image: "/images/project-gaca-airport-3.png" },
-      { label: "Technician on an aerial platform fitting insulated ductwork inside the O&M building", image: "/images/project-gaca-airport-4.png" },
+      { label: "Rooftop chiller units on an elevated platform", image: "/images/service-chillers-rooftop.png" },
     ],
   },
   {
@@ -46,11 +51,12 @@ export const projects: Project[] = [
     description:
       "RSS erected client-supplied pre-engineered buildings across a 32,745 sqm installation area for Gulf Packaging Industries Ltd in Jubail, covering CCP1, CCP2 and Line-04 buildings. Scope included structural installation, roof and wall sandwich panels, plaster and blockwork, and roof waterproofing and insulation, delivering weathertight production buildings ready for plant fit-out.",
     relatedServiceSlugs: ["civil-construction", "floor-epoxy-coatings"],
-    imageLabel: "PEB structural steel erection, Gulf Packaging Industries",
-    heroImage: "/images/project-gulf-packaging-2.png",
+    imageLabel: "Structural steel erection with fire-protection piping ahead of cladding",
+    heroImage: "/images/project-gaca-airport-3.png",
     gallery: [
+      { label: "Technician on an aerial platform fitting insulated ductwork", image: "/images/project-gaca-airport-4.png" },
+      { label: "Interior facility room during fit-out", image: "/images/project-facility-interior.png" },
       { label: "Rooftop waterproofing and insulation works in progress", image: "/images/project-gulf-packaging-1.png" },
-      { label: "Completed PEB shell interior with piping staged for installation", image: "/images/project-gulf-packaging-2.png" },
     ],
   },
   {
@@ -68,12 +74,10 @@ export const projects: Project[] = [
     description:
       "RSS delivered a complete civil-to-structural package for Bunyan Company in Al Kharaj: constructing footings, pedestals, grade beams and grade slab before supplying and installing a lightweight pre-engineered building structure across 6,000 sqm.",
     relatedServiceSlugs: ["civil-construction"],
-    imageLabel: "Lightweight PEB structure, Bunyan Company, Al Kharaj",
-    heroImage: "/images/project-bunyan-crane.png",
+    imageLabel: "Steel structure erected, Bunyan Company, Al Kharaj",
+    heroImage: "/images/hero-peb-construction.png",
     gallery: [
-      { label: "Mobile crane lifting steel members into place", image: "/images/project-bunyan-crane.png" },
-      { label: "Forklift and scissor lift crews installing roof purlins", image: "/images/project-bunyan-almanhal-1.png" },
-      { label: "PEB building exterior with scissor lift staged at the entrance", image: "/images/project-peb-exterior-1.png" },
+      { label: "Mobile crane lifting a steel member into place", image: "/images/project-bunyan-crane.png" },
     ],
   },
   {
@@ -91,12 +95,10 @@ export const projects: Project[] = [
     description:
       "For Al Manhal Water in Riyadh, RSS delivered footings, pedestals, grade beams and grade slab ahead of supplying and installing a lightweight pre-engineered building structure spanning 4,200 sqm, following the same delivery model proven at Bunyan Company.",
     relatedServiceSlugs: ["civil-construction"],
-    imageLabel: "Lightweight PEB structure, Al Manhal Water, Riyadh",
-    heroImage: "/images/project-bunyan-almanhal-2.png",
+    imageLabel: "Forklift and scissor lift crews installing roof purlins, Al Manhal Water, Riyadh",
+    heroImage: "/images/project-bunyan-almanhal-1.png",
     gallery: [
       { label: "Steel frame erection with scissor lift and site crew", image: "/images/project-bunyan-almanhal-2.png" },
-      { label: "PEB building exterior with curved roofline", image: "/images/project-peb-exterior-2.png" },
-      { label: "PEB building exterior, worker on roof during erection", image: "/images/project-peb-exterior-3.png" },
     ],
   },
   {
@@ -113,12 +115,9 @@ export const projects: Project[] = [
     description:
       "RSS supplied, installed, tested and commissioned a GAVARDO (Italy) fire tube boiler with 1,500 kg per hour capacity for Masdar Al Hayat, part of the Al Tamimi Group, at the 2nd Industrial City in Riyadh: a project requiring precise mechanical installation and controlled commissioning to meet process steam demand.",
     relatedServiceSlugs: ["process-piping-fabrication", "storage-tanks-vessels"],
-    imageLabel: "Fire tube boiler installation, Masdar Al Hayat",
-    heroImage: "/images/project-masdar-boiler-2.png",
-    gallery: [
-      { label: "Boiler room with fire tube boilers, structural steel and overhead piping", image: "/images/project-masdar-boiler-2.png" },
-      { label: "Fire tube boiler shell with control panel", image: "/images/project-masdar-boiler-1.png" },
-    ],
+    imageLabel: "Fire tube boiler shell with control panel, Masdar Al Hayat",
+    heroImage: "/images/project-masdar-boiler-1.png",
+    gallery: [],
   },
   {
     slug: "arab-milling-company",
@@ -131,8 +130,9 @@ export const projects: Project[] = [
     description:
       "RSS runs a one-year preventive maintenance contract for Arab Milling Company's air compressor equipment in Riyadh, part of our ongoing Trading and Maintenance division work supporting food-processing clients across the Kingdom.",
     relatedServiceSlugs: ["compressor-overhauling", "air-compressors"],
-    imageLabel: "Air compressor maintenance, Arab Milling Company",
-    gallery: [{ label: "Technician servicing industrial air compressor unit" }],
+    imageLabel: "Mechanical plant room, Arab Milling Company",
+    heroImage: "/images/project-masdar-boiler-1.png",
+    gallery: [],
   },
   {
     slug: "prince-sultan-air-base",
@@ -152,13 +152,12 @@ export const projects: Project[] = [
     description:
       "RSS delivered a complete HVAC package unit installation at Prince Sultan Air Base (American Air Base), Al Kharaj: supplying and installing package units with metallic and fabric ductwork, insulation and cladding, concrete equipment foundations, control panel installation, and full commissioning across a mix of permanent and rapid-deployment tented facilities.",
     relatedServiceSlugs: ["hvac-systems", "electrical-systems"],
-    imageLabel: "Package unit HVAC installation, Prince Sultan Air Base",
-    heroImage: "/images/project-psab-tent-row.png",
+    imageLabel: "Site store stocked with PPE and safety equipment, Prince Sultan Air Base",
+    heroImage: "/images/certificates-hse-store.png",
     gallery: [
       { label: "Crane lifting palletised equipment on base", image: "/images/project-psab-crane-delivery.png" },
       { label: "Package air-conditioning unit connected to a tented facility", image: "/images/project-psab-tent-unit.png" },
       { label: "Row of tented facilities with duct connections", image: "/images/project-psab-tent-row.png" },
-      { label: "Package units and insulated ducting along a second row of tents", image: "/images/project-psab-tent-row-2.png" },
     ],
   },
   {
@@ -167,14 +166,20 @@ export const projects: Project[] = [
     client: "Al Khuriji Perfumes Factory",
     location: "Saudi Arabia",
     area: "Steel platform, 50m x 6m x 15m",
-    scope: ["Supply, fabrication and erection of steel platform (50m x 6m x 15m)"],
+    scope: [
+      "Supply, fabrication and erection of steel platform (50m x 6m x 15m)",
+      "Supply and installation of 3mm SIKA epoxy flooring",
+    ],
     summary:
       "Supply, fabrication and erection of a 50m x 6m x 15m steel platform for Al Khuriji Perfumes Factory.",
     description:
-      "RSS supplied, fabricated and erected a large-scale steel platform (50m x 6m x 15m) for Al Khuriji Perfumes Factory, providing structural support for rooftop mechanical plant including HVAC package units.",
-    relatedServiceSlugs: ["process-piping-fabrication", "hvac-systems"],
+      "RSS supplied, fabricated and erected a large-scale steel platform (50m x 6m x 15m) for Al Khuriji Perfumes Factory, providing structural support for rooftop mechanical plant including HVAC package units, alongside supply and installation of 3mm SIKA epoxy flooring at the facility.",
+    relatedServiceSlugs: ["process-piping-fabrication", "hvac-systems", "floor-epoxy-coatings"],
     imageLabel: "Rooftop steel platform with HVAC units, Al Khuriji Perfumes Factory",
-    gallery: [{ label: "Rooftop steel platform supporting package HVAC units" }],
+    heroImage: "/images/service-hvac-rooftop-install.png",
+    gallery: [
+      { label: "3mm SIKA epoxy flooring installation, Al Khuriji Factory", image: "/images/project-floor-epoxy-1.png" },
+    ],
   },
   {
     slug: "golden-chicken-facility",
@@ -191,9 +196,9 @@ export const projects: Project[] = [
     description:
       "RSS supplied and installed a 75KV 5PC air compressor system for Golden Chicken Facility, complete with stainless steel piping and tank, an air dryer, and exhaust duct routing, supporting the facility's continuous production requirements.",
     relatedServiceSlugs: ["air-compressors"],
-    imageLabel: "Industrial air compressor units installed for Golden Chicken Facility",
-    heroImage: "/images/service-air-compressors-heavy-duty.png",
-    gallery: [{ label: "Heavy-duty industrial air compressor units on site", image: "/images/service-air-compressors-heavy-duty.png" }],
+    imageLabel: "CompAir industrial air compressor with overhead ductwork, Golden Chicken Facility",
+    heroImage: "/images/service-air-compressors-row.png",
+    gallery: [],
   },
   {
     slug: "swcc-housing-compound",
@@ -211,10 +216,9 @@ export const projects: Project[] = [
     description:
       "RSS replaced old AHUs with new Variable Refrigerant Flow (VRF) units at the Saline Water Conversion Corporation's housing compound in Jubail: a large-scale retrofit covering approximately 300 indoor terminal units across 100 villas and apartments, phased to minimise disruption to residents.",
     relatedServiceSlugs: ["vrf-vrv-systems", "hvac-systems", "chillers"],
-    imageLabel: "VRF outdoor unit installation, SWCC housing compound",
-    heroImage: "/images/service-vrf-open-panel-1.png",
+    imageLabel: "VRF outdoor unit, cutaway view of internal components, SWCC housing compound",
+    heroImage: "/images/service-vrf-cutaway.png",
     gallery: [
-      { label: "VRF outdoor unit, cutaway view of internal components", image: "/images/service-vrf-cutaway.png" },
       { label: "VRF outdoor condensing unit with open service panel", image: "/images/service-vrf-open-panel-1.png" },
       { label: "Second VRF unit with open panel on an occupied rooftop", image: "/images/service-vrf-open-panel-2.png" },
       { label: "Branded rooftop package unit installed during the retrofit", image: "/images/service-chillers-trane-unit.png" },
@@ -240,6 +244,7 @@ export const projects: Project[] = [
     gallery: [
       { label: "Evaporator units mounted on the warehouse wall", image: "/images/service-cold-storage-interior.png" },
       { label: "Electrical control panels with indicator lights", image: "/images/service-electrical-panels.png" },
+      { label: "Compressor casing disassembled for inspection", image: "/images/service-compressor-overhaul-1.png" },
     ],
   },
   {
@@ -262,7 +267,7 @@ export const projects: Project[] = [
     imageLabel: "Satellite communications site with cooling plant, STC data centers",
     heroImage: "/images/project-stc-satellite-site.png",
     gallery: [
-      { label: "Compressor casing disassembled for inspection", image: "/images/service-compressor-overhaul-1.png" },
+      { label: "Overhauled compressor units and motors staged in the workshop", image: "/images/service-air-compressor-parts.png" },
       { label: "Workshop bench with compressor components", image: "/images/service-compressor-overhaul-2.png" },
       { label: "Compressor parts staged in a warehouse", image: "/images/service-compressor-parts-warehouse.png" },
       { label: "Crane servicing a satellite communications site with cooling plant below", image: "/images/project-stc-satellite-site.png" },
@@ -289,6 +294,8 @@ export const projects: Project[] = [
     gallery: [
       { label: "Cold room interior with evaporator fan units", image: "/images/project-cold-room-interior-1.png" },
       { label: "Cold room interior, alternate angle showing insulated panels", image: "/images/project-cold-room-interior-2.png" },
+      { label: "Facility building exterior", image: "/images/project-peb-exterior-1.png" },
+      { label: "Facility building exterior, alternate angle", image: "/images/project-peb-exterior-2.png" },
     ],
   },
   {
@@ -314,35 +321,6 @@ export const projects: Project[] = [
       { label: "Empty cold room ready for racking installation", image: "/images/project-warda-cold-room-empty.png" },
       { label: "Cold room aisle with pallet racking installed", image: "/images/project-warda-cold-room-racking.png" },
       { label: "Crew examining an insulated wall panel seam", image: "/images/project-cold-room-wall-panel.png" },
-    ],
-  },
-  {
-    slug: "specialized-works",
-    title: "Specialized and Miscellaneous Industrial Works",
-    client: "Multiple Clients",
-    location: "Kingdom of Saudi Arabia",
-    scope: [
-      "Supply and installation of 3mm SIKA epoxy flooring at Al Khuraiji Factory",
-      "Supply and installation of blast freezers",
-      "Supply and installation of double duct at a Saudi Electric power plant",
-      "Construction of 20 valve boxes at the KAIA Jeddah project",
-      "Construction of a sewage tank in Al Kharj, Dammam",
-      "Supply and installation of a Carrier package unit at King Salman Airbase",
-    ],
-    summary:
-      "A cross-section of smaller specialized scopes: epoxy flooring, blast freezers, ducting, valve boxes, sewage tanks and package units, delivered for clients across Saudi Arabia.",
-    description:
-      "Beyond our headline contracts, RSS regularly delivers smaller specialized scopes that showcase the breadth of our capability: epoxy flooring for food-grade facilities, blast freezer installations, ducting for power infrastructure, valve box construction at King Abdulaziz International Airport (KAIA) Jeddah, sewage tank construction in Al Kharj/Dammam, and package unit supply for King Salman Airbase.",
-    relatedServiceSlugs: ["floor-epoxy-coatings", "plumbing-fire-fighting", "cold-rooms-cold-storage", "hvac-systems"],
-    imageLabel: "Specialized industrial works across multiple client sites",
-    heroImage: "/images/project-floor-epoxy-aerial.png",
-    gallery: [
-      { label: "3mm SIKA epoxy flooring installation, Al Khuraiji Factory", image: "/images/project-floor-epoxy-1.png" },
-      { label: "Blast freezer and cold storage units supplied and installed", image: "/images/project-cold-storage-freezer.png" },
-      { label: "Electrical and ducting works at a power plant facility", image: "/images/project-electrical-building-exterior.png" },
-      { label: "Valve box construction, KAIA Jeddah project", image: "/images/project-valve-box-kaia.png" },
-      { label: "Sewage tank construction, Al Kharj, Dammam", image: "/images/project-sewage-tank-alkharj.png" },
-      { label: "Aerial view of epoxy floor application", image: "/images/project-floor-epoxy-aerial.png" },
     ],
   },
 ];

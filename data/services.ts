@@ -124,7 +124,6 @@ export const services: Service[] = [
       "gulf-packaging-industries",
       "bunyan-company",
       "al-manhal-water",
-      "specialized-works",
     ],
     faqs: [
       {
@@ -746,7 +745,7 @@ export const services: Service[] = [
     industries: ["Aviation", "Government & Military", "Water & Utilities", "Manufacturing"],
     heroImage: "/images/project-sewage-tank-alkharj.png",
     galleryImages: ["/images/project-valve-box-kaia.png", "/images/project-sewage-tank-alkharj.png"],
-    relatedProjectSlugs: ["specialized-works"],
+    relatedProjectSlugs: [],
     faqs: [
       {
         question: "Has RSS worked on airport infrastructure before?",
@@ -795,7 +794,7 @@ export const services: Service[] = [
     industries: ["Food & Beverage", "Manufacturing"],
     heroImage: "/images/project-floor-epoxy-aerial.png",
     galleryImages: ["/images/project-floor-epoxy-1.png", "/images/project-floor-epoxy-aerial.png"],
-    relatedProjectSlugs: ["specialized-works"],
+    relatedProjectSlugs: [],
     faqs: [
       {
         question: "What epoxy systems does RSS install?",

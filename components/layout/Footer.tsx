@@ -7,8 +7,6 @@ import { COMPANY, SITE_NAME } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="border-t border-navy-900 bg-navy-950 text-navy-200">
       <Container className="py-16">
@@ -93,7 +91,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-navy-800 pt-6 text-xs text-navy-400 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {COMPANY.legalName}. All rights reserved. CR {COMPANY.crNumber} · VAT{" "}
+            © {COMPANY.legalName}. All rights reserved. CR {COMPANY.crNumber} · VAT{" "}
             {COMPANY.vatNumber}
           </p>
           <Link href="/privacy-policy" className="hover:text-gold-300">

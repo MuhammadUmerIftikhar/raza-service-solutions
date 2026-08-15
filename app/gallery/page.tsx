@@ -50,10 +50,8 @@ export default function GalleryPage() {
             tiles.push({ key: "hero", label: project.imageLabel, image: project.heroImage });
 
             project.gallery.forEach((item, index) => {
-              if (item.image) {
-                if (seen.has(item.image)) return;
-                seen.add(item.image);
-              }
+              if (!item.image || seen.has(item.image)) return;
+              seen.add(item.image);
               tiles.push({ key: `${project.slug}-${index}`, label: item.label, image: item.image });
             });
 

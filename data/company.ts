@@ -97,6 +97,11 @@ export const certifications = [
     image: "/images/certificate-vat-registration-1.png",
   },
   {
+    name: "VAT Registration Certificate (Page 2)",
+    description: "Continuation page of the VAT Registration Certificate, VAT Registration No. 311294803800003.",
+    image: "/images/certificate-vat-registration-2.png",
+  },
+  {
     name: "Company Registration Certificate",
     description: "Ministry of Commerce Commercial Registration No. 1010799326, registered in Riyadh as a 100% foreign-owned limited liability company, CR No. 1010799326.",
     image: "/images/certificate-company-registration.png",

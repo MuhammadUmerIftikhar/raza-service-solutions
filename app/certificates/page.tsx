@@ -46,7 +46,7 @@ export default function CertificatesPage() {
       <section className="py-20 sm:py-24">
         <Container>
           <SectionHeading eyebrow="Registration" title="Certifications" />
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {certifications.map((cert) => (
               <div key={cert.name} className="rounded-2xl border border-navy-100 bg-white p-6">
                 <PreviewableImage src={cert.image} label={cert.name} aspect="aspect-[4/5]" />
